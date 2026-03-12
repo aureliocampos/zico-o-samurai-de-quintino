@@ -277,7 +277,7 @@
               />
             </div>
           </div>
-          
+
           <!-- Navigation arrows (padrão do swiper) -->
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
@@ -287,35 +287,123 @@
       <!-- ============================================================
          DIRETOR
       ============================================================ -->
-      <section id="diretor" class="diretor" aria-label="Seção do Diretor João Wainer">
+      <section
+        id="diretor"
+        class="diretor"
+        aria-label="Seção do Diretor João Wainer"
+      >
         <div class="diretor__container">
           <div class="diretor__perfil">
             <div class="diretor__perfil-content">
-              <img 
+              <img
                 class="diretor__nome"
-                src="assets/img/nome-diretor-joao-wainer.webp" 
-                alt="João Wainer" 
-                loading="lazy" 
+                src="assets/img/nome-diretor-joao-wainer.webp"
+                alt="João Wainer"
+                loading="lazy"
               />
               <p class="diretor__citacao">
-                "Mais do que as conquistas e glórias do Zico, venho aprendendo com ele lições que vão além do futebol, como humildade, respeito e gentileza."
+                "Mais do que as conquistas e glórias do Zico, venho aprendendo
+                com ele lições que vão além do futebol, como humildade, respeito
+                e gentileza."
               </p>
             </div>
           </div>
           <div class="diretor__poster">
-            <img 
+            <img
               class="diretor__poster-img"
-              src="assets/img/capa-do-filme-zico-o-samurai-de-quintino.webp" 
-              alt="Pôster Oficial - Zico, o Samurai de Quintino" 
-              loading="lazy" 
+              src="assets/img/capa-do-filme-zico-o-samurai-de-quintino.webp"
+              alt="Pôster Oficial - Zico, o Samurai de Quintino"
+              loading="lazy"
             />
           </div>
         </div>
       </section>
     </main>
 
+    <!-- ============================================================
+       FOOTER
+    ============================================================ -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__container">
+        <!-- Footer Top: Logo + Call to Action -->
+        <div class="footer__top">
+          <div class="footer__logo-wrapper">
+            <img
+              class="footer__logo"
+              src="assets/img/logo-filme-zico-o-samurai-de-quintino.webp"
+              alt="Zico, o Samurai de Quintino Logo Principal"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="footer__cta">
+            <div>
+              <img
+                class="footer__data-estreia"
+                src="assets/img/data-de-estreia.webp"
+                alt="Estreia Dia 30 de Abril Somente Nos Cinemas"
+                loading="lazy"
+              />
+              <p class="footer__data-estreia-text">Somente nos cinemas</p>
+            </div>
+            <a
+              class="footer__btn"
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Estreia:+Zico,+o+Samurai+de+Quintino&dates=20260430T000000Z/20260501T000000Z&details=Estreia+nos+cinemas+do+filme+Zico,+o+Samurai+de+Quintino"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Adicionar estreia ao calendário do Google"
+            >
+              <img
+                src="assets/img/icon-calendar.svg"
+                alt=""
+                aria-hidden="true"
+                width="32"
+                height="32"
+              />
+              ADICIONE AO SEU CALENDÁRIO
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Bottom: Creditos e Patrocínios -->
+        <div class="footer__bottom">
+          <picture class="footer__picture">
+            <source
+              media="(min-width: 992px)"
+              srcset="
+                assets/img/lista-de-nomes-dos-produtores-desktop-footer.webp
+              "
+            />
+            <img
+              class="footer__creditos-texto"
+              src="assets/img/lista-de-nomes-dos-produtores-mobile-footer.webp"
+              alt="Lista de Produtores e Coprodutores"
+              loading="lazy"
+            />
+          </picture>
+          <picture class="footer__picture">
+            <source
+              media="(min-width: 992px)"
+              srcset="
+                assets/img/lista-dos-logos-patrocinadores-e-producao-desktop.webp
+              "
+            />
+            <img
+              class="footer__creditos-logos"
+              src="assets/img/lista-dos-logos-patrocinadores-e-producao-mobile.webp"
+              alt="Logos de Patrocínio e Produção"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      </div>
+    </footer>
+
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+      defer
+    ></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>

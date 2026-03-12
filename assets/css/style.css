@@ -594,6 +594,114 @@ body {
 }
 
 /* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  width: 100%;
+  background: var(--color-black);
+  padding: 4rem 1.75rem 2rem;
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.footer__logo {
+  width: 50%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer__data-estreia {
+  width: 100%;
+  max-width: 566px;
+  height: auto;
+  display: block;
+}
+.footer__data-estreia-text {
+  color: #ede8cb;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.footer__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-size: 0.875rem;
+  font-weight: 400;
+  max-width: 566px;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  width: 100%;
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.footer__btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.footer__btn img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__creditos-texto,
+.footer__creditos-logos {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* =========================================
    DESKTOP ADJUSTMENTS
    ========================================= */
 @media (min-width: 992px) {
@@ -745,5 +853,59 @@ body {
   .diretor__poster-img {
     height: 100%;
     object-position: center top;
+  }
+
+  /* Footer Desktop */
+  .footer {
+    padding: 6rem 3rem 4rem;
+  }
+
+  .footer__container {
+    max-width: 1214px;
+  }
+
+  .footer__top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6rem;
+    max-width: 1170px;
+  }
+  .footer__bottom {
+    gap: 3rem;
+  }
+
+  .footer__logo-wrapper {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .footer__logo {
+    margin: 0; /* zera margem automática que centralizava antes */
+    width: 479px;
+    max-width: 100%;
+  }
+
+  .footer__cta {
+    flex: 0 0 auto;
+    align-items: flex-end; /* Foca todos blocos filhos na direita para alinhar com grid */
+  }
+  .footer__data-estreia-text {
+    font-size: 1.5rem;
+  }
+
+  .footer__btn {
+    font-size: 1.65rem;
+    padding: 1.7rem 3.5rem;
+  }
+  .footer__btn img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer__creditos-texto,
+  .footer__creditos-logos {
+    max-width: 100%; /* No desktop ocupará tudo até bater no flex container limiter */
   }
 }
