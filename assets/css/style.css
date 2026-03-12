@@ -490,6 +490,110 @@ body {
 }
 
 /* =========================================
+   GALERIA (SWIPER)
+   ========================================= */
+.galeria {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: var(--color-black);
+}
+
+.galeria__slider {
+  width: 100%;
+  height: auto;
+}
+
+.galeria__slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Customizando setas do Swiper */
+.galeria__slider .swiper-button-next,
+.galeria__slider .swiper-button-prev {
+  color: var(--color-white);
+  --swiper-navigation-size: 2rem;
+  --swiper-navigation-sides-offset: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+}
+
+/* =========================================
+   DIRETOR
+   ========================================= */
+.diretor {
+  width: 100%;
+  background: var(--color-black);
+}
+
+.diretor__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.diretor__perfil {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background-image: url("../img/diretor-joao-wainer-e-sua-equipe-avaliando-cenas-gravadas-do-filme.webp");
+  background-size: cover;
+  background-position: center left;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 3rem 1.75rem;
+}
+
+/* Dark overlay for readability */
+.diretor__perfil::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.diretor__perfil-content {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  text-align: left;
+}
+
+.diretor__nome {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.diretor__citacao {
+  color: var(--color-white);
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.diretor__poster {
+  width: 100%;
+  display: flex;
+}
+
+.diretor__poster-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
    DESKTOP ADJUSTMENTS
    ========================================= */
 @media (min-width: 992px) {
@@ -588,5 +692,58 @@ body {
 
   .sinopse__image-wrapper {
     flex: 1;
+  }
+
+  /* Galeria Desktop */
+  .galeria__slider .swiper-button-next,
+  .galeria__slider .swiper-button-prev {
+    --swiper-navigation-size: 3rem; /* Setas maiores no desktop */
+  }
+
+  /* Diretor Desktop - 50/50 Grid full width */
+  .diretor__container {
+    display: grid;
+    grid-template-columns: 66% 34%;
+    /* Faz a seção vazar o max-width caso precise ocupar 100vw igual a galeria: */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .diretor__perfil {
+    min-height: 600px;
+    height: 100%;
+    padding: 4rem 4rem 4rem 2rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .diretor__perfil::before {
+    /* Gradiente escuro focado na direita onde vai o texto */
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+  }
+
+  .diretor__perfil-content {
+    max-width: 420px;
+  }
+
+  .diretor__citacao {
+    font-size: 1.35rem; /* Aumenta a citação um pouco no desktop */
+  }
+
+  .diretor__poster {
+    height: 100%;
+  }
+
+  .diretor__poster-img {
+    height: 100%;
+    object-position: center top;
   }
 }

@@ -80,3 +80,19 @@
     }
   });
 })();
+
+// Galeria Swiper Init
+(function () {
+  // Verifica se o Swiper foi carregado globalmente antes de instanciar
+  if (typeof Swiper !== 'undefined') {
+    const galeriaSwiper = new Swiper('.galeria__slider', {
+      loop: true,
+      slidesPerView: 1,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      grabCursor: true,
+    });
+  }
+})();

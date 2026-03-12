@@ -22,6 +22,11 @@
       content="assets/img/capa-do-filme-zico-o-samurai-de-quintino.webp"
     />
 
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <!-- JSON-LD Structured Data for Movie/Product -->
@@ -241,8 +246,76 @@
           </div>
         </div>
       </section>
+
+      <!-- ============================================================
+         GALERIA DE FOTOS
+      ============================================================ -->
+      <section id="galeria" class="galeria" aria-label="Galeria de fotos">
+        <!-- Swiper primary container -->
+        <div class="swiper galeria__slider">
+          <div class="swiper-wrapper">
+            <!-- Slides (Repetimos 3 vezes para visualizar o loop) -->
+            <div class="swiper-slide">
+              <img
+                src="assets/img/zico-em-momento-de-lazer-com-netos.webp"
+                alt="Zico em momento de lazer com seus netos jogando bola"
+                loading="lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="assets/img/zico-em-momento-de-lazer-com-netos.webp"
+                alt="Zico em momento de lazer com seus netos jogando bola"
+                loading="lazy"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="assets/img/zico-em-momento-de-lazer-com-netos.webp"
+                alt="Zico em momento de lazer com seus netos jogando bola"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          
+          <!-- Navigation arrows (padrão do swiper) -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         DIRETOR
+      ============================================================ -->
+      <section id="diretor" class="diretor" aria-label="Seção do Diretor João Wainer">
+        <div class="diretor__container">
+          <div class="diretor__perfil">
+            <div class="diretor__perfil-content">
+              <img 
+                class="diretor__nome"
+                src="assets/img/nome-diretor-joao-wainer.webp" 
+                alt="João Wainer" 
+                loading="lazy" 
+              />
+              <p class="diretor__citacao">
+                "Mais do que as conquistas e glórias do Zico, venho aprendendo com ele lições que vão além do futebol, como humildade, respeito e gentileza."
+              </p>
+            </div>
+          </div>
+          <div class="diretor__poster">
+            <img 
+              class="diretor__poster-img"
+              src="assets/img/capa-do-filme-zico-o-samurai-de-quintino.webp" 
+              alt="Pôster Oficial - Zico, o Samurai de Quintino" 
+              loading="lazy" 
+            />
+          </div>
+        </div>
+      </section>
     </main>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
