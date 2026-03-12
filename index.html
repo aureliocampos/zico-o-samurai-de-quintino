@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zico, o Samurai de Quintino</title>
+    <meta
+      name="description"
+      content="Conheça a história de Zico, o Samurai de Quintino. Direção de João Wainer. Assista ao trailer oficial."
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Zico, o Samurai de Quintino" />
+    <meta
+      property="og:description"
+      content="Conheça a história de Zico, o Samurai de Quintino. Direção de João Wainer. Assista ao trailer oficial."
+    />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://zicoosamuraidequintino.com.br" />
+    <meta
+      property="og:image"
+      content="assets/img/capa-do-filme-zico-o-samurai-de-quintino.webp"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- JSON-LD Structured Data for Movie/Product -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Movie",
+        "name": "Zico, o Samurai de Quintino",
+        "director": {
+          "@type": "Person",
+          "name": "João Wainer"
+        },
+        "description": "Conheça a história de Zico, o Samurai de Quintino. Assista ao trailer oficial."
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <div
+        id="menu-overlay"
+        class="menu-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navegação"
+        aria-hidden="true"
+      >
+        <div class="menu-overlay__inner">
+          <div class="menu-overlay__top">
+            <button
+              id="menu-close"
+              class="menu-overlay__close"
+              aria-label="Fechar menu"
+            >
+              <img
+                src="assets/img/icon-close.svg"
+                alt=""
+                aria-hidden="true"
+                width="28"
+                height="28"
+              />
+            </button>
+          </div>
+          <nav class="menu-overlay__nav" aria-label="Navegação principal">
+            <ul>
+              <li><a href="#" class="is-active">Home</a></li>
+              <li><a href="#">Sinopse</a></li>
+              <li><a href="#">Galeria</a></li>
+              <li><a href="#">Ingressos</a></li>
+              <li><a href="#">Ficha Técnica</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- ============================================================
+         VIDEO MODAL
+    ============================================================ -->
+      <div
+        id="video-modal"
+        class="video-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Trailer do Filme Zico"
+        aria-hidden="true"
+      >
+        <button
+          id="video-close"
+          class="video-modal__close"
+          aria-label="Fechar trailer"
+        >
+          <img
+            src="assets/img/icon-close.svg"
+            alt=""
+            aria-hidden="true"
+            width="40"
+            height="40"
+          />
+        </button>
+
+        <div class="video-modal__content">
+          <div class="video-modal__aspect-ratio">
+            <iframe
+              id="video-iframe"
+              src=""
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <section class="hero" aria-label="Seção principal">
+        <header class="navbar" role="banner">
+          <!-- Aparece apenas no desktop, centralizada -->
+          <img
+            class="navbar__partners-desktop"
+            src="assets/img/lista-de-nomes-dos-produtores-desktop-header.webp"
+            alt="Lista da Produção"
+          />
+
+          <button
+            id="menu-btn"
+            class="navbar__menu-btn"
+            aria-label="Abrir menu"
+            aria-controls="menu-overlay"
+            aria-expanded="false"
+          >
+            <img
+              src="assets/img/icon-menu.svg"
+              alt=""
+              aria-hidden="true"
+              width="28"
+              height="28"
+              fetchpriority="high"
+            />
+          </button>
+        </header>
+
+        <img
+          class="navbar__partners-mobile"
+          src="assets/img/lista-de-nomes-dos-produtores-mobile-header.webp"
+          alt="Lista da Produção"
+          fetchpriority="high"
+        />
+
+        <div class="hero__content">
+          <div class="hero__container">
+            <img
+              class="hero__logo"
+              src="assets/img/logo-filme-zico-o-samurai-de-quintino-direcao-joao-wainer.webp"
+              alt="Zico, o Samurai de Quintino – Direção: João Wainer"
+              width="280"
+              height="auto"
+              fetchpriority="high"
+            />
+
+            <a href="#trailer" class="hero__cta">
+              <img
+                src="assets/img/icon-play.svg"
+                alt=""
+                aria-hidden="true"
+                width="14"
+                height="14"
+              />
+              Assistir Trailer
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

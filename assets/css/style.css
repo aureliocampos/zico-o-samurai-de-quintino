@@ -1,0 +1,508 @@
+/* =========================================
+   DESIGN TOKENS
+   ========================================= */
+:root {
+  --color-red: #e3000b;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #0a0a0a;
+  --color-text-muted: rgba(255, 255, 255, 0.55);
+  --color-overlay-bg: rgba(0, 0, 0, 0.82);
+
+  --font-base: "Hanken Grotesk", sans-serif;
+  --font-size-nav-links: 0.625rem; /* ~10px */
+
+  --transition-fast: 0.25s ease;
+  --transition-menu: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================
+   RESET & BASE
+   ========================================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-base);
+  background: var(--color-dark);
+  color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   FONTS
+   ========================================= */
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/HankenGrotesk-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url("../fonts/HankenGrotesk-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 500px;
+  background-image: url("../img/zico-comemorando-gol-marcado-no-maracana.webp");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Dark gradient overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.28) 55%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Bottom fade */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--color-dark));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+.navbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.875rem 1.5rem;
+  width: 100%;
+}
+
+/* Base states: hide desktop image, show mobile image */
+.navbar__partners-desktop {
+  display: none;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar__partners-mobile {
+  display: block;
+  margin: 0 auto;
+  max-width: 85%;
+  height: auto;
+}
+
+/* Hamburger button */
+.navbar__menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.navbar__menu-btn:hover {
+  opacity: 0.75;
+}
+
+.navbar__menu-btn img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* =========================================
+   HERO CONTENT
+   ========================================= */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.75rem 3rem;
+}
+
+.hero__logo {
+  display: block;
+  width: 100%;
+  max-width: clamp(200px, 45vw, 479px);
+  height: auto;
+  margin-bottom: 1.75rem;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.25rem 0.65rem 1rem;
+  border-radius: 20px;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+  align-self: flex-start;
+}
+
+.hero__cta:hover {
+  background-color: #c0000a;
+  transform: translateY(-1px);
+}
+
+.hero__cta img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   OVERLAY MENU
+   ========================================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-image: url("../img/zico-comemorando-gol-marcado-no-maracana.webp");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  /* Dark tint over the same background */
+  isolation: isolate;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-menu);
+}
+
+.menu-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay-bg);
+  z-index: -1;
+}
+
+/* Open state */
+.menu-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Inner layout */
+.menu-overlay__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0.875rem 1.5rem;
+}
+
+/* Top bar inside overlay */
+.menu-overlay__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Partner names – same as navbar, slightly dimmer */
+.menu-overlay__partners-img {
+  display: block;
+  max-width: 80%;
+  margin-right: 1rem;
+}
+
+.menu-overlay__partners-img img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 24px;
+  opacity: 0.6;
+}
+
+/* Close button */
+.menu-overlay__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.875rem 1.5rem 0 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity var(--transition-fast);
+}
+
+.menu-overlay__close:hover {
+  opacity: 0.75;
+}
+
+.menu-overlay__close img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* Navigation links */
+.menu-overlay__nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0.25rem;
+}
+
+.menu-overlay__nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.menu-overlay__nav a {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-white);
+  padding: 0.35rem 0;
+  transition: color var(--transition-fast);
+
+  /* Staggered slide-in for menu items */
+  transform: translateX(-20px);
+  opacity: 0;
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-menu),
+    opacity var(--transition-menu);
+}
+
+.menu-overlay.is-open .menu-overlay__nav a {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Stagger delays */
+.menu-overlay__nav li:nth-child(1) a {
+  transition-delay: 0.05s;
+}
+.menu-overlay__nav li:nth-child(2) a {
+  transition-delay: 0.1s;
+}
+.menu-overlay__nav li:nth-child(3) a {
+  transition-delay: 0.15s;
+}
+.menu-overlay__nav li:nth-child(4) a {
+  transition-delay: 0.2s;
+}
+.menu-overlay__nav li:nth-child(5) a {
+  transition-delay: 0.25s;
+}
+
+/* Active / Hover states */
+.menu-overlay__nav a.is-active,
+.menu-overlay__nav a:hover {
+  color: var(--color-red);
+  font-weight: 700;
+}
+
+/* =========================================
+   VIDEO MODAL
+   ========================================= */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--color-overlay-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-menu);
+}
+
+.video-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 201;
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+  padding: 0.5rem;
+}
+
+.video-modal__close:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.video-modal__content {
+  position: relative;
+  width: 100%;
+  max-width: 1280px; /* Max optimal viewing size */
+  margin: 0 auto;
+}
+
+.video-modal__aspect-ratio {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  background-color: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(20px);
+  transition: transform var(--transition-menu);
+}
+
+.video-modal.is-open .video-modal__aspect-ratio {
+  transform: translateY(0);
+}
+
+.video-modal__aspect-ratio iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* =========================================
+   DESKTOP ADJUSTMENTS
+   ========================================= */
+@media (min-width: 992px) {
+  .hero__content {
+    padding: 0 3rem 4rem;
+  }
+
+  .hero__cta {
+    font-size: 1.5rem;
+    padding: 1rem 2.5rem 1rem 2rem;
+  }
+
+  .navbar {
+    padding: 1.5rem 3rem;
+  }
+  .menu-overlay__close img,
+  .navbar__menu-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Hide the image that was outside the header */
+  .navbar__partners-mobile {
+    display: none;
+  }
+
+  /* Show the image inside the header and center it */
+  .navbar__partners-desktop {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%; /* Increase limit if needed for desktop */
+  }
+  .hero__cta {
+    align-self: end;
+    margin-bottom: 1rem;
+  }
+  .hero__cta img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero::before {
+    display: none;
+  }
+  .hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .menu-overlay__nav {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .menu-overlay__nav ul {
+    gap: 2rem;
+  }
+  .menu-overlay__nav a {
+    font-size: 2.25rem;
+  }
+}
