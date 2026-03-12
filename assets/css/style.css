@@ -44,7 +44,7 @@ body {
    ========================================= */
 @font-face {
   font-family: "Hanken Grotesk";
-  src: url("../fonts/HankenGrotesk-Regular.ttf") format("truetype");
+  src: url("../fonts/HankenGrotesk-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@ body {
 
 @font-face {
   font-family: "Hanken Grotesk";
-  src: url("../fonts/HankenGrotesk-Bold.ttf") format("truetype");
+  src: url("../fonts/HankenGrotesk-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -278,7 +278,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.875rem 1.5rem 0 0;
+  padding: 0.25rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -437,6 +437,59 @@ body {
 }
 
 /* =========================================
+   SINOPSE
+   ========================================= */
+.sinopse {
+  background: var(--color-black);
+  width: 100%;
+}
+
+.sinopse__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.sinopse__content {
+  padding: 3rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sinopse__title {
+  width: 100%;
+  max-width: 338px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.sinopse__text {
+  color: var(--color-white);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.sinopse__text--highlight {
+  font-weight: 700;
+
+  font-size: 0.675rem;
+}
+
+.sinopse__image-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+.sinopse__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
    DESKTOP ADJUSTMENTS
    ========================================= */
 @media (min-width: 992px) {
@@ -451,6 +504,9 @@ body {
 
   .navbar {
     padding: 1.5rem 3rem;
+  }
+  .menu-overlay__close {
+    padding: 0.875rem 1.5rem 0 0;
   }
   .menu-overlay__close img,
   .navbar__menu-btn img {
@@ -504,5 +560,33 @@ body {
   }
   .menu-overlay__nav a {
     font-size: 2.25rem;
+  }
+
+  /* Sinopse Desktop - 50/50 Grid */
+  .sinopse__container {
+    flex-direction: row;
+  }
+
+  .sinopse__content {
+    width: 45%;
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  .sinopse__title {
+    font-size: 4.5rem;
+  }
+
+  .sinopse__text-wrapper {
+    max-width: 520px;
+    display: inline-flex;
+    align-self: flex-end;
+    flex-direction: column;
+  }
+  .sinopse__text {
+    font-size: 1.125rem;
+  }
+
+  .sinopse__image-wrapper {
+    flex: 1;
   }
 }

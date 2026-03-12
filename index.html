@@ -75,10 +75,6 @@
           </nav>
         </div>
       </div>
-
-      <!-- ============================================================
-         VIDEO MODAL
-    ============================================================ -->
       <div
         id="video-modal"
         class="video-modal"
@@ -108,7 +104,15 @@
               src=""
               title="YouTube video player"
               frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
             ></iframe>
@@ -122,6 +126,7 @@
             class="navbar__partners-desktop"
             src="assets/img/lista-de-nomes-dos-produtores-desktop-header.webp"
             alt="Lista da Produção"
+            fetchpriority="high"
           />
 
           <button
@@ -151,14 +156,22 @@
 
         <div class="hero__content">
           <div class="hero__container">
-            <img
-              class="hero__logo"
-              src="assets/img/logo-filme-zico-o-samurai-de-quintino-direcao-joao-wainer.webp"
-              alt="Zico, o Samurai de Quintino – Direção: João Wainer"
-              width="280"
-              height="auto"
-              fetchpriority="high"
-            />
+            <picture>
+              <source
+                media="(min-width: 768px)"
+                srcset="
+                  assets/img/logo-filme-zico-o-samurai-de-quintino-direcao-joao-wainer.webp
+                "
+              />
+              <img
+                class="hero__logo"
+                src="assets/img/logo-filme-zico-o-samurai-de-quintino-direcao-joao-wainer.webp"
+                alt="Zico, o Samurai de Quintino – Direção: João Wainer"
+                width="280"
+                height="auto"
+                fetchpriority="high"
+              />
+            </picture>
 
             <a href="#trailer" class="hero__cta">
               <img
@@ -170,6 +183,61 @@
               />
               Assistir Trailer
             </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SINOPSE
+      ============================================================ -->
+      <section id="sinopse" class="sinopse" aria-labelledby="sinopse-title">
+        <div class="sinopse__container">
+          <div class="sinopse__content">
+            <div class="sinopse__text-wrapper">
+              <img
+                class="sinopse__title"
+                src="assets/img/titulo-sinopse.webp"
+                alt="Sinopse"
+                width="338"
+                height="54"
+              />
+
+              <p class="sinopse__text">
+                No subúrbio carioca, um ídolo nasceu com espírito de guerreiro e
+                humildade de um Rei. O Brasil vai, mais uma vez, assistir a um
+                dos maiores craques da história do futebol. Desta vez, porém, o
+                estádio vai ser a sala de cinema.
+              </p>
+
+              <p class="sinopse__text">
+                <strong>ZICO - O SAMURAI DE QUINTINO </strong>chega às telas com
+                um olhar único sobre a vida do Galinho. O filme vai além dos
+                inesquecíveis gols e das atuações antológicas, trazendo imagens
+                raras, registros de arquivo pessoal e bastidores inéditos. Quem
+                conta a história é o próprio Zico, acompanhado de quem viveu
+                cada momento com ele: os pais, os irmãos, a esposa, os filhos e
+                os grandes companheiros de equipe.
+              </p>
+
+              <p class="sinopse__text sinopse__text--highlight">
+                O Arthurzico da família Coimbra. O Camisa 10 da Gávea.
+                <br />
+                O ídolo da Amarelinha. O revolucionário do Japão.
+                <br />
+                O marido da Sandra, pai e avô. Todos eles cabem
+                <br />
+                em ZICO - O SAMURAI DE QUINTINO.
+              </p>
+            </div>
+          </div>
+
+          <div class="sinopse__image-wrapper">
+            <img
+              class="sinopse__image"
+              src="assets/img/foto-de-rosto-zico-jovem.webp"
+              alt="Foto retrato jovem de Zico"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
