@@ -10,7 +10,7 @@
   --color-overlay-bg: rgba(0, 0, 0, 0.82);
 
   --font-base: "Hanken Grotesk", sans-serif;
-  --font-size-nav-links: 0.625rem; /* ~10px */
+  --font-size-nav-links: 0.625rem; 
 
   --transition-fast: 0.25s ease;
   --transition-menu: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -25,6 +25,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -75,7 +79,6 @@ body {
   overflow: hidden;
 }
 
-/* Dark gradient overlay for readability */
 .hero::before {
   content: "";
   position: absolute;
@@ -90,7 +93,6 @@ body {
   z-index: 1;
 }
 
-/* Bottom fade */
 .hero::after {
   content: "";
   position: absolute;
@@ -116,7 +118,6 @@ body {
   width: 100%;
 }
 
-/* Base states: hide desktop image, show mobile image */
 .navbar__partners-desktop {
   display: none;
   max-width: 100%;
@@ -130,7 +131,6 @@ body {
   height: auto;
 }
 
-/* Hamburger button */
 .navbar__menu-btn {
   background: none;
   border: none;
@@ -217,10 +217,8 @@ body {
   background-position: center top;
   background-repeat: no-repeat;
 
-  /* Dark tint over the same background */
   isolation: isolate;
 
-  /* Hidden by default */
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-menu);
@@ -234,13 +232,11 @@ body {
   z-index: -1;
 }
 
-/* Open state */
 .menu-overlay.is-open {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Inner layout */
 .menu-overlay__inner {
   position: relative;
   display: flex;
@@ -249,7 +245,6 @@ body {
   padding: 0.875rem 1.5rem;
 }
 
-/* Top bar inside overlay */
 .menu-overlay__top {
   display: flex;
   align-items: center;
@@ -257,7 +252,6 @@ body {
   width: 100%;
 }
 
-/* Partner names – same as navbar, slightly dimmer */
 .menu-overlay__partners-img {
   display: block;
   max-width: 80%;
@@ -273,7 +267,6 @@ body {
   opacity: 0.6;
 }
 
-/* Close button */
 .menu-overlay__close {
   background: none;
   border: none;
@@ -296,7 +289,6 @@ body {
   display: block;
 }
 
-/* Navigation links */
 .menu-overlay__nav {
   flex: 1;
   display: flex;
@@ -323,7 +315,6 @@ body {
   padding: 0.35rem 0;
   transition: color var(--transition-fast);
 
-  /* Staggered slide-in for menu items */
   transform: translateX(-20px);
   opacity: 0;
   transition:
@@ -337,7 +328,6 @@ body {
   opacity: 1;
 }
 
-/* Stagger delays */
 .menu-overlay__nav li:nth-child(1) a {
   transition-delay: 0.05s;
 }
@@ -354,7 +344,6 @@ body {
   transition-delay: 0.25s;
 }
 
-/* Active / Hover states */
 .menu-overlay__nav a.is-active,
 .menu-overlay__nav a:hover {
   color: var(--color-red);
@@ -374,7 +363,6 @@ body {
   justify-content: center;
   padding: 1.5rem;
 
-  /* Hidden by default */
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-menu);
@@ -407,14 +395,14 @@ body {
 .video-modal__content {
   position: relative;
   width: 100%;
-  max-width: 1280px; /* Max optimal viewing size */
+  max-width: 1280px; 
   margin: 0 auto;
 }
 
 .video-modal__aspect-ratio {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%; 
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
@@ -514,7 +502,6 @@ body {
   display: block;
 }
 
-/* Customizando setas do Swiper */
 .galeria__slider .swiper-button-next,
 .galeria__slider .swiper-button-prev {
   color: var(--color-white);
@@ -550,7 +537,6 @@ body {
   padding: 3rem 1.75rem;
 }
 
-/* Dark overlay for readability */
 .diretor__perfil::before {
   content: "";
   position: absolute;
@@ -726,18 +712,16 @@ body {
     height: 40px;
   }
 
-  /* Hide the image that was outside the header */
   .navbar__partners-mobile {
     display: none;
   }
 
-  /* Show the image inside the header and center it */
   .navbar__partners-desktop {
     display: block;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 80%; /* Increase limit if needed for desktop */
+    max-width: 80%; 
   }
   .hero__cta {
     align-self: end;
@@ -774,7 +758,6 @@ body {
     font-size: 2.25rem;
   }
 
-  /* Sinopse Desktop - 50/50 Grid */
   .sinopse__container {
     flex-direction: row;
   }
@@ -802,17 +785,15 @@ body {
     flex: 1;
   }
 
-  /* Galeria Desktop */
   .galeria__slider .swiper-button-next,
   .galeria__slider .swiper-button-prev {
-    --swiper-navigation-size: 3rem; /* Setas maiores no desktop */
+    --swiper-navigation-size: 3rem; 
   }
 
-  /* Diretor Desktop - 50/50 Grid full width */
   .diretor__container {
     display: grid;
     grid-template-columns: 66% 34%;
-    /* Faz a seção vazar o max-width caso precise ocupar 100vw igual a galeria: */
+
     width: 100vw;
     position: relative;
     left: 50%;
@@ -830,7 +811,7 @@ body {
   }
 
   .diretor__perfil::before {
-    /* Gradiente escuro focado na direita onde vai o texto */
+
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.1) 0%,
@@ -843,7 +824,7 @@ body {
   }
 
   .diretor__citacao {
-    font-size: 1.35rem; /* Aumenta a citação um pouco no desktop */
+    font-size: 1.35rem; 
   }
 
   .diretor__poster {
@@ -855,7 +836,6 @@ body {
     object-position: center top;
   }
 
-  /* Footer Desktop */
   .footer {
     padding: 6rem 3rem 4rem;
   }
@@ -882,14 +862,14 @@ body {
   }
 
   .footer__logo {
-    margin: 0; /* zera margem automática que centralizava antes */
+    margin: 0; 
     width: 479px;
     max-width: 100%;
   }
 
   .footer__cta {
     flex: 0 0 auto;
-    align-items: flex-end; /* Foca todos blocos filhos na direita para alinhar com grid */
+    align-items: flex-end; 
   }
   .footer__data-estreia-text {
     font-size: 1.5rem;
@@ -906,6 +886,6 @@ body {
 
   .footer__creditos-texto,
   .footer__creditos-logos {
-    max-width: 100%; /* No desktop ocupará tudo até bater no flex container limiter */
+    max-width: 100%; 
   }
 }
