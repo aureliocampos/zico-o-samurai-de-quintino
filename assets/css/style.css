@@ -10,7 +10,7 @@
   --color-overlay-bg: rgba(0, 0, 0, 0.82);
 
   --font-base: "Hanken Grotesk", sans-serif;
-  --font-size-nav-links: 0.625rem; 
+  --font-size-nav-links: 0.625rem;
 
   --transition-fast: 0.25s ease;
   --transition-menu: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -395,14 +395,14 @@ body {
 .video-modal__content {
   position: relative;
   width: 100%;
-  max-width: 1280px; 
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .video-modal__aspect-ratio {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; 
+  padding-bottom: 56.25%;
   background-color: #000;
   border-radius: 8px;
   overflow: hidden;
@@ -493,6 +493,17 @@ body {
 .galeria__slider {
   width: 100%;
   height: auto;
+}
+
+.galeria__slider .swiper-slide {
+  height: 100vh;
+  min-height: 300px;
+  max-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-black);
+  overflow: hidden;
 }
 
 .galeria__slider .swiper-slide img {
@@ -721,7 +732,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 80%; 
+    max-width: 80%;
   }
   .hero__cta {
     align-self: end;
@@ -787,7 +798,7 @@ body {
 
   .galeria__slider .swiper-button-next,
   .galeria__slider .swiper-button-prev {
-    --swiper-navigation-size: 3rem; 
+    --swiper-navigation-size: 3rem;
   }
 
   .diretor__container {
@@ -811,7 +822,6 @@ body {
   }
 
   .diretor__perfil::before {
-
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.1) 0%,
@@ -824,7 +834,7 @@ body {
   }
 
   .diretor__citacao {
-    font-size: 1.35rem; 
+    font-size: 1.35rem;
   }
 
   .diretor__poster {
@@ -862,14 +872,14 @@ body {
   }
 
   .footer__logo {
-    margin: 0; 
+    margin: 0;
     width: 479px;
     max-width: 100%;
   }
 
   .footer__cta {
     flex: 0 0 auto;
-    align-items: flex-end; 
+    align-items: flex-end;
   }
   .footer__data-estreia-text {
     font-size: 1.5rem;
@@ -886,6 +896,6 @@ body {
 
   .footer__creditos-texto,
   .footer__creditos-logos {
-    max-width: 100%; 
+    max-width: 100%;
   }
 }
