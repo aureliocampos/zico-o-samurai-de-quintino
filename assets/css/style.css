@@ -461,7 +461,7 @@ body {
 
 .sinopse__text--highlight {
   font-weight: 700;
-
+  font-style: italic;
   font-size: 0.675rem;
 }
 
@@ -791,7 +791,9 @@ body {
   .sinopse__text {
     font-size: 1.125rem;
   }
-
+  .sinopse__text--highlight {
+    font-style: normal;
+  }
   .sinopse__image-wrapper {
     flex: 1;
   }
