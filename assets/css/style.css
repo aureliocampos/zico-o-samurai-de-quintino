@@ -453,7 +453,7 @@ body {
 
 .sinopse__text {
   color: var(--color-white);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   letter-spacing: 0.03em;
@@ -462,7 +462,6 @@ body {
 .sinopse__text--highlight {
   font-weight: 700;
   font-style: italic;
-  font-size: 0.675rem;
 }
 
 .sinopse__image-wrapper {
