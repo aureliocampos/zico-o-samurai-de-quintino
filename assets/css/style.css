@@ -790,9 +790,6 @@ body {
   .sinopse__text {
     font-size: 1.125rem;
   }
-  .sinopse__text--highlight {
-    font-style: normal;
-  }
   .sinopse__image-wrapper {
     flex: 1;
   }
